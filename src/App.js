@@ -2,6 +2,7 @@ import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from './components/Header';
 import { useState } from 'react';
+import Todos from './components/Todos';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         changeBackground={newBackground => setBackground(newBackground)}
         currentBackground={background}
       />
+      <Todos />
     </div>
   );
 }

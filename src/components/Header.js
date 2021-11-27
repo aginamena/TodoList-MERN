@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Header.scss";
+import axios from 'axios';
 
 export default function Header(props) {
     return (
@@ -29,7 +30,7 @@ export default function Header(props) {
                     style={props.currentBackground === "sun" ? { backgroundColor: "white" } :
                         { backgroundColor: "#25273D" }}
                 >
-                    <i className="fas fa-search fa-2x search-icon" style={props.currentBackground === "sun" ?
+                    <i className="fas fa-plus fa-2x search-icon" style={props.currentBackground === "sun" ?
                         { color: "black" } : { color: "#C8CBE7" }}></i>
                     <input type="text" placeholder="Create a new todo..."
                         style={props.currentBackground === "sun" ?

@@ -1,0 +1,12 @@
+#todos {
+  height: 439px;
+  width: 540px;
+  background-color: white;
+  border-radius: 10px;
+  //   positioned relative to the app component
+  position: absolute;
+  left: 50%;
+  top: 250px;
+  transform: translateX(-50%);
+  box-shadow: 5px 10px 18px #888888;
+}
