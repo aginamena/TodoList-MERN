@@ -6,6 +6,7 @@ import Todos from './components/Todos';
 
 
 function App() {
+  const [todos, setTodos] = useState();
   const [background, setBackground] = useState("sun");
   return (
     <div className="App"
@@ -14,8 +15,9 @@ function App() {
       <Header
         changeBackground={newBackground => setBackground(newBackground)}
         currentBackground={background}
+        setNewTodos={newList => setTodos(newList)}
       />
-      <Todos />
+      <Todos listOfTodos={todos} />
     </div>
   );
 }
