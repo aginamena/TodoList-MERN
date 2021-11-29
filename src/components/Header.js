@@ -1,26 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Header.scss";
-import axios from 'axios';
-import queryString from 'query-string';
-
 export default function Header(props) {
-    const [todos, setTodos] = useState([]);
-    async function handleSubmit(event) {
-        event.preventDefault();
-        const inputValue = document.querySelector("#newTodoItem").value;
-        const options = {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ description: inputValue })
-        }
-        const response = await fetch("http://localhost:4000/Todo/add", options);
-        const data = await response.json();
-        const newDate = [...todos, data];
-        setTodos(newDate);
-        props.setNewTodos(newDate);
-    }
     return (
         <header
             style={props.currentBackground === "sun" ? { backgroundImage: "url(./images/bg-desktop-light.jpg)" } :
@@ -44,7 +24,7 @@ export default function Header(props) {
 
                     }
                 </div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={event => props.handleSubmit(event)}>
                     <div id="headerbottomCmp"
                         style={props.currentBackground === "sun" ? { backgroundColor: "white" } :
                             { backgroundColor: "#25273D" }}

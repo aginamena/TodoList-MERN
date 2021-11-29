@@ -6,6 +6,16 @@
   & > .todoCheckbox {
     margin-right: 20px;
     border-radius: 50px;
+    position: relative;
+    .checkMark {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  & > .todoCheckbox:hover {
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   }
   .fa-circle path {
     stroke: blue;
