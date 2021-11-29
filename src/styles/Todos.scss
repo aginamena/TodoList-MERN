@@ -14,6 +14,13 @@
   #todosList {
     height: 340px;
     overflow: auto;
+    position: relative;
+    #emptyTodoList {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   & > #todoButtons {
@@ -25,5 +32,22 @@
     padding-top: 20px;
     padding-bottom: 20px;
     border-top: 0.5px solid #979797;
+    .utils {
+      letter-spacing: -0.194444px;
+      color: #9495a5;
+      cursor: pointer;
+    }
+    .utils:hover {
+      color: #494c6b;
+    }
+    .listOfOptions {
+      letter-spacing: -0.194444px;
+      font-weight: bold;
+      color: #9495a5;
+      cursor: pointer;
+    }
+    .listOfOptions:hover {
+      color: #494c6b !important;
+    }
   }
 }

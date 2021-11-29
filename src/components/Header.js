@@ -29,7 +29,10 @@ export default function Header(props) {
                         style={props.currentBackground === "sun" ? { backgroundColor: "white" } :
                             { backgroundColor: "#25273D" }}
                     >
-                        <button type="submit"><i className="fas fa-plus fa-2x search-icon" style={props.currentBackground === "sun" ?
+                        <button type="submit"
+                            style={props.currentBackground === "sun" ? { backgroundColor: "white" }
+                                : { backgroundColor: "rgb(37, 39, 61)" }}
+                        ><i className="fas fa-plus fa-2x search-icon" style={props.currentBackground === "sun" ?
                             { color: "black" } : { color: "#C8CBE7" }}></i></button>
                         <input type="text" placeholder="Create a new todo..."
                             style={props.currentBackground === "sun" ?
