@@ -6,11 +6,11 @@ export default function TodoItem(props) {
         // marking the todo as completed in the front end
         const clickedCheckbox = event.target;
         let todoName = null;
-        let textColor = props.background === "sun" ? "color: #D1D2DA" : 'color: #4D5067'
         if (clickedCheckbox.classList.contains("todoCheckbox")) {
-            clickedCheckbox.cssText = "background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)), color:" + textColor;
+            clickedCheckbox.cssText = "background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)), color:"
             todoName = clickedCheckbox.nextSibling;
         } else {
+            clickedCheckbox.style = "display : block";
             clickedCheckbox.parentElement.style = "background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))";
             todoName = clickedCheckbox.parentElement.nextSibling;
         }
@@ -42,18 +42,30 @@ export default function TodoItem(props) {
         props.sendId(todoId);
     }
     return (
-        <div className="todos">
+        <div className="todos"
+            style={props.background === "sun" ? { borderBottom: "1px solid #E3E4F1" } :
+                { borderBottom: "1px solid #393A4B" }}
+        >
             <i className="far fa-circle fa-lg todoCheckbox" onClick={markTodoAsComplete}
                 style={props.completed ? { background: "linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))" }
                     : {}}
             >
-                <img className="checkMark" src="./images/icon-check.svg" alt="check icon" />
+                <img className="checkMark"
+                    src="./images/icon-check.svg" alt="check icon"
+                    style={props.completed ? { display: "block" } : { display: "none" }}
+                />
             </i>
             <span className="todosName" id={props.id}
-                style={props.completed ? { textDecorationLine: "line-through", color: "#D1D2DA" } :
-                    props.background === "sun" ? { color: "#494C6B" } : { color: "#C8CBE7" }}
+
+                style={props.completed ? (props.background === "sun" ?
+                    { textDecorationLine: "line-through", color: "#D1D2DA" } :
+                    { textDecorationLine: "line-through", color: "#4D5067" }) :
+                    (props.background === "sun" ? { color: "#494C6B" } : { color: "#C8CBE7" })
+                }
             >{props.name} </span>
-            <i className="fas fa-times fa-lg deleteTodo" onClick={deleteTodo}></i>
+            <i className="fas fa-times fa-lg deleteTodo" onClick={deleteTodo}
+                style={props.background === "sun" ? { color: "#494C6B" } : { color: "#5B5E7E" }}
+            ></i>
         </div>
     )
 }

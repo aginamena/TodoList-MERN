@@ -1,5 +1,4 @@
 .todos {
-  border-bottom: 0.5px solid #979797;
   padding: 20px;
   position: relative;
   cursor: pointer;
@@ -15,6 +14,9 @@
     }
   }
   & > .todoCheckbox:hover {
+    .checkMark {
+      display: block !important;
+    }
     background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   }
   .fa-circle path {
