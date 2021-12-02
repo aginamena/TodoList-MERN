@@ -49,3 +49,15 @@
     }
   }
 }
+
+@media (max-width: 540px) {
+  #headerCmp {
+    #headerTopCmp {
+      width: 100%;
+      font-size: 30px;
+    }
+    & > div {
+      width: 80%;
+    }
+  }
+}

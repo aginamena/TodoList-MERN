@@ -11,3 +11,14 @@
   transform: translateX(-50%);
   letter-spacing: -0.194444px;
 }
+
+@media (max-width: 1024px) {
+  .App {
+    height: 100vh;
+  }
+}
+@media (max-width: 540px) {
+  .App {
+    height: 900px;
+  }
+}
