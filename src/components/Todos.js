@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import "../styles/Todos.scss";
 import TodoItem from './TodoItem';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
 
 function Todos(props) {
     function update(endPoint, method, clickedList) {

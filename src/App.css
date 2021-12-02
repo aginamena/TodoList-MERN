@@ -4,13 +4,6 @@
   position: relative;
   height: 770px;
 }
-.App > small {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  letter-spacing: -0.194444px;
-}
 
 @media (max-width: 1024px) {
   .App {

@@ -68,11 +68,6 @@ function App() {
         background={background}
         currentTodo={currentList}
       />
-      <small style={background === "sun" ? { color: "#9495A5" } : { color: "#5B5E7E" }}>
-        <div>Drag and drop to reorder list</div>
-        <div style={{ textAlign: "center" }}>By Mena Agina</div>
-      </small>
-
     </div>
   );
 }
